@@ -1,0 +1,105 @@
+<?php 
+	session_start();
+    include "conexion.php";
+
+    if(!empty($_POST))
+	{
+		$alert='';
+		if(empty($_POST['curp']) || empty($_POST['nombre']) || empty($_POST['apellidos']) || empty($_POST['direccion']) || empty($_POST['telefono']) || empty($_POST['correo']))
+		{
+			$alert='<p class="msg_error">Todos los campos son obligatorios.</p>';
+		}else{
+
+			$curp = $_POST['curp'];
+            $nombre = $_POST['nombre'];
+			$apellidos  = $_POST['apellidos'];
+			$direccion  = $_POST['direccion'];
+			$telefono  = $_POST['telefono'];
+			$correo   = $_POST['correo'];
+
+
+			$result= 0;
+            if ($curp){
+                $query = mysqli_query($conection,"SELECT * FROM cliente WHERE curp = '$curp' ");
+                $result = mysqli_fetch_array($query);
+            }
+           
+
+			if($result > 0){
+				$alert='<p class="msg_error">El curp ingresado ya existe.</p>';
+			}else{
+				$query_insert = mysqli_query($conection,"INSERT INTO cliente(curp,nombre,apellidos,direccion,telefono,correo)
+																	VALUES('$curp','$nombre','$apellidos','$direccion','$telefono','$correo')");
+				if($query_insert){
+					$alert='<p class="msg_save">Cliente guardado correctamente.</p>';
+				}else{
+					$alert='<p class="msg_error">Error al guaradr el cliente.</p>';
+				}
+
+			}
+
+		}
+        mysqli_close($conection);
+
+	}
+    ?>
+<!DOCTYPE html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <header>
+		<div class="wrapp">
+			<div class="logo">
+				Tienda Jaguares<img src="images/logo1.png" height=75px width=240px>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="damas.html">Damas</a></li>
+					<li><a href="caballeros.html">Caballeros</a></li>
+                    <li><a href="ninos.html">Niños</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+    <section id="container">
+		
+		<div class="form_register">
+			<h1>Registro Cliente</h1>
+			<hr>
+			<div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
+
+			<form action="" method="post">
+                <label for="curp">Curp</label>
+				<input type="text" name="curp" id="curp" placeholder="Ingrese su curp">
+				<label for="nombre">Nombre</label>
+				<input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
+                <label for="apellidos">Apellidos</label>
+				<input type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus apellidos">
+				<label for="direccion">Direccion</label>
+				<input type="text" name="direccion" id="direccion" placeholder="Ingrese su direccion">
+				<label for="telefono">Telefono</label>
+				<input type="number" name="telefono" id="telefono" placeholder="Ingrese su telefono">
+                <label for="correo">Correo electrónico</label>
+				<input type="email" name="correo" id="correo" placeholder="Ingrese su Correo electrónico">
+
+				
+				<input type="submit" value="Guardar cliente" class="btn_save">
+
+			</form>
+
+
+		</div>
+
+
+	</section>
+    <footer>
+		<div class="wrapp">
+            <p> Equipo 6 </p>
+		</div>
+	</footer>
+</body>

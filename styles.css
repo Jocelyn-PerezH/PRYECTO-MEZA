@@ -1,0 +1,211 @@
+body {
+    margin: 0px;
+    background-color: aliceblue;
+    font-family: 'Nerko One', cursive;
+}
+
+button {
+    font-size: 16px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.wrapp {
+	max-width: 1000px;
+	width:80%;
+	margin:auto;
+	overflow: hidden;
+}
+
+.page-nav {
+    background-color: #2196F3;
+    border: 1px solid black;
+    position: relative;
+}
+.wrapp {
+	max-width: 1000px;
+	width:80%;
+	margin:auto;
+	overflow: hidden;
+}
+
+header {
+	width: 100%;
+	height: 100px;
+	padding:20px 0;
+	background: #2E4C6D;
+	overflow: hidden;
+}
+
+.logo {
+	
+	float: left;
+}
+
+.logo img {
+	width:100%;
+	vertical-align: top;
+}
+
+nav {
+	float: right;
+}
+
+nav ul li {
+	display: inline-block;
+	margin:0px 5px;
+}
+
+nav ul li a {
+	display: block;
+	background: #f2f2f2;
+	color: #2E4C6D;
+	padding:10px 20px;
+	text-decoration: none;
+	border-radius:3px;
+	transition:all 300ms ease;
+}
+
+nav ul li a:hover {
+	color: #fff;
+	background: #396EB0;
+}
+
+.page-nav h1 {
+    margin: 20px;
+}
+
+.button-checkout {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA; /* Blue */
+    transition-duration: 0.4s;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.button-checkout:hover {
+    background-color: #008CBA; /* Blue */
+    color: white;
+}
+
+.page-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product-container {
+    margin: 15px;
+    padding: 2px 16px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+.product-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+.product-container img {
+    width: 300px;
+}
+
+.product-container h1 {
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+.button-add {
+    background-color: white;
+    color: black;
+    border: 2px solid #396EB0; /* Green */
+    transition-duration: 0.4s;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+  
+.button-add:hover {
+    background-color: #396EB0; /* Green */
+    color: white;
+}
+#container{
+	padding: 90px 15px 15px;
+}
+/*****************************************************************/
+
+.form_register{
+	width: 450px;
+	margin: auto;
+}
+.form_register h1{
+	color: #3c93b0;
+}
+hr{
+	border: 0;
+	background: #CCC;
+	height: 1px;
+	margin: 10px 0;
+	display: block;
+}
+form{
+	background: #FFF;
+	margin: auto;
+	padding: 20px 50px;
+	border: 1px solid #d1d1d1;
+}
+label{
+	display: block;
+	font-size: 12pt;
+	font-family: 'GothamBook';
+	margin: 15px auto 5px auto;
+}
+input,select{
+	display: block;
+	width: 100%;
+	font-size: 11pt;
+	padding: 5px;
+	border: 1px solid #85929e;
+	border-radius: 5px;
+}
+.notItemOne option:first-child{
+	display: none;
+}
+.btn_save{
+	font-size: 12pt;
+	background: #12a4c6;
+	padding: 10px;
+	color: #FFF;
+	letter-spacing: 1px;
+	border: 0;
+	cursor: pointer;
+	margin: 15px auto;
+}
+.alert{
+	width: 100%;
+	background: #66e07d66;
+	border-radius: 6px;
+	margin: 20px auto;
+}
+.msg_error{
+	color: #e65656;
+}
+.msg_save{
+	color: #126e00;
+}
+.alert p{
+	padding: 10px;
+}
+footer {
+	width: 100%;
+	background:#2E4C6D;
+	padding:20px 0;
+	color:#fff;
+}
+
+footer p {
+	text-align:center;
+}
